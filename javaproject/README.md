@@ -69,8 +69,17 @@ Program menerapkan _Delegation Event Model_ dari paket `java.awt.event.*` dengan
 
 ## Screenshot Program
 
-![alt text](image.png) //coba setor
-![alt text](image-1.png) //coba tarik
-![alt text](image-2.png) //coba error
-![alt text](image-3.png) //coba hapus riwayat
-![alt text](image-4.png) //berhasil hapus riwayat
+![alt text](image.png)
+//coba setor
+
+![alt text](image-1.png)
+//coba tarik
+
+![alt text](image-2.png)
+//coba error
+
+![alt text](image-3.png)
+//coba hapus riwayat
+
+![alt text](image-4.png)
+//berhasil hapus riwayat
