@@ -5,8 +5,8 @@ Repositori ini berisi implementasi program **Graphical User Interface (GUI)** me
 ## Identitas Mahasiswa
 
 - **Nama:** Muhammad Akbar
-- **NIM:** [Isi NIM Anda]
-- **Kelas:** 5C - Teknik Informatika
+- **NIM:** F1D02410075
+- **Kelas:** 5C
 - **Program Studi:** Teknik Informatika - Universitas Mataram
 
 ---
