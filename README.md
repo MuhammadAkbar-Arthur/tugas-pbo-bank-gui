@@ -30,19 +30,14 @@ Antarmuka pengguna dibagi menjadi dua tab utama menggunakan `JTabbedPane`:
 
 Proyek ini dibangun secara terstruktur menjadi 3 file kode sumber Java (`.java`):
 
-```text
 tugas-pbo-bank-gui/
-├── README.md                      # Dokumentasi utama repositori (root)
-├── desc.md                        # Deskripsi ringkas proyek
+├── README.md
 └── javaproject/
-    ├── README.md                  # Dokumentasi internal folder proyek
-    ├── desc.md
-    ├── ss1.png ~ ss5.png          # Berkas dokumentasi screenshot antarmuka
+    ├── ss1.png ~ ss5.png
     └── src/
-        ├── Nasabah.java           # Model/Entity Class (Encapsulation data nasabah)
-        ├── AplikasiBankMini.java  # GUI Builder, Layouting, Array of Objects, & Event Handling
-        └── Main.java              # Driver class (Entry point aplikasi)
-```
+        ├── Nasabah.java
+        ├── AplikasiBankMini.java
+        └── Main.java
 
 1. **`Nasabah.java`:** Kelas entitas/model yang menerapkan prinsip *Encapsulation* dengan atribut `private` (`nama`, `saldo`, `jumlahTransaksi`), *getter/setter*, serta metode bisnis perbankan seperti `setorTunai(double nominal)`, `tarikTunai(double nominal)` yang dilengkapi validasi kecukupan saldo, dan `resetData()`.
 2. **`AplikasiBankMini.java`:** Kelas utama GUI yang membangun antarmuka visual, mengelola koleksi *Array of Objects* (`Nasabah[] daftarNasabah`), mengatur hierarki kontainer dan *Layout Manager*, serta menangani interaksi pengguna melalui implementasi 4 *Event Listener Interfaces* dan 1 *Event Adapter Class*.
