@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-// Bagian 1 Event Handler: Deklarasi class yang mengimplementasikan 4 interface listener sekaligus
+// Bagian 1 Event Handler: Deklarasi class yang mengimplementasikan 4 interface listener sekaligus (dan Event Adapter Class via inner class)
 public class AplikasiBankMini implements ActionListener, MouseListener, ItemListener, KeyListener {
 
     // 1. Deklarasi Top-Level Container
@@ -157,8 +157,9 @@ public class AplikasiBankMini implements ActionListener, MouseListener, ItemList
         frame.getContentPane().add(lblJudul, BorderLayout.NORTH);
         frame.getContentPane().add(tabPane, BorderLayout.CENTER);
 
-        // Pengaturan penutupan JFrame dan menampilkan ke layar
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // Pengaturan penutupan JFrame dengan WindowAdapter dan menampilkan ke layar
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        frame.addWindowListener(new WindowCloseHandler());
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
@@ -249,10 +250,10 @@ public class AplikasiBankMini implements ActionListener, MouseListener, ItemList
                     frame,
                     "Apakah Anda yakin ingin keluar dari Aplikasi Bank Mini?",
                     "Konfirmasi Keluar",
-                    JOptionPane.OK_CANCEL_OPTION,
+                    JOptionPane.YES_NO_OPTION,
                     JOptionPane.QUESTION_MESSAGE
             );
-            if (confirm == JOptionPane.OK_OPTION) {
+            if (confirm == JOptionPane.YES_OPTION) {
                 System.exit(0);
             }
         }
@@ -403,4 +404,23 @@ public class AplikasiBankMini implements ActionListener, MouseListener, ItemList
 
     @Override
     public void mouseReleased(MouseEvent e) {}
+
+    // =========================================================================
+    // Bagian 2E Event Adapter Class: Implementasi WindowAdapter untuk Window Event
+    // =========================================================================
+    private class WindowCloseHandler extends WindowAdapter {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            int confirm = JOptionPane.showConfirmDialog(
+                    frame,
+                    "Apakah Anda yakin ingin keluar dari Aplikasi Bank Mini?",
+                    "Konfirmasi Keluar",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE
+            );
+            if (confirm == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
+        }
+    }
 }
